@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>麻雀 捨牌・ツモ処理</title>
+  <script src="ma-zyann.js" defer></script>
+  <style>
+    body { font-family: sans-serif; padding: 20px; }
+    .tile {
+      display: inline-block;
+      padding: 5px 10px;
+      margin: 2px;
+      border: 1px solid #333;
+      border-radius: 4px;
+      background: #f0f0f0;
+      cursor: pointer;
+    }
+    #discarded { margin-top: 20px; }
+  </style>
+</head>
+<body>
+  <h1>麻雀</h1>
+  <button onclick="startGame()">ゲーム開始</button>
+  <button onclick="tsumo()">ツモ</button>
+  <!-- 和了ボタン（最初は非表示） -->
+<button id="agari-button" style="display:none;" onclick="checkWin()">和了</button>
+  <button onclick="sortHand(); renderHand();">理牌</button>
+
+  <h2>手牌（クリックで捨て）</h2>
+  <div id="hand"></div>
+
+  <h2>捨牌（山残：<span id="deck-count"></span>枚）</h2>
+  <div id="discarded"></div>
+
+  <h2>ドラ表示</h2>
+  <div id="dora"></div>
+</body>
+</html>
